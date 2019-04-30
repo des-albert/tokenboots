@@ -1,0 +1,5 @@
+<%= bootstrap_form_for :user do |f| %>
+  <%= f.collection_select(:id, Recipient.order('name ASC').all, :id, :name, :label => 'User name',
+                          :prompt => 'Select name') %>
+  <%= f.submit "Enter", :class => "btn btn-success"%>
+<% end %>

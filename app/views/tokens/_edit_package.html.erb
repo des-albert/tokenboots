@@ -1,0 +1,9 @@
+<h5 class="text-success">Token Subject : <%= @token.package.subject %><br><br>
+<p class="text-info">Current State : <span class="btn btn-warning"><%= @token.state.name %></span></p></h5>
+<div class='nested-fields'>
+<%= f.inputs do %>
+  <%= f.input :request, :as => :text, :input_html => {:class => "auto grow", :rows => 5, :cols => 80}%>
+  <%= f.input :response, :required => false,
+              :as => :text, :input_html => {:class => "auto grow", :rows => 5, :cols => 80} %>
+<% end %>
+</div>

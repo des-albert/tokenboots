@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  request: MyString
+  response: MyString
+  token: one
+
+two:
+  subject: MyString
+  request: MyString
+  response: MyString
+  token: two

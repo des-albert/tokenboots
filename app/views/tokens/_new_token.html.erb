@@ -1,0 +1,12 @@
+<%= semantic_form_for @token do |f| %>
+  <%= f.semantic_fields_for :package do |package| %>
+    <%= render 'new_package', :f => package %>
+  <% end %>
+  <%= f.inputs do %>
+    <%= f.input :recipient %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

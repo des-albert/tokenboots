@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p class="text-primary">
+  <strong>Creator:</strong>
+  <%= @token.creator %>
+</p>
+
+<p class="text-primary">
+  <strong>State:</strong>
+  <%= @token.state.name %>
+</p>
+
+<p class="text-primary">
+  <strong>Recipient:</strong>
+  <%= @token.recipient.name %>
+</p>
+<div class="list-group">
+  <ul>
+    <li class="list-group-item list-group-item-success">Subject: <%= @token.package.subject %></li>
+    <li class="list-group-item list-group-item-warning">Request: <%= @token.package.request %></li>
+    <li class="list-group-item list-group-item-info"> Response: <%= @token.package.response %></li>
+  </ul>
+</div>

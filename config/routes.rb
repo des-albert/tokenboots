@@ -1,0 +1,15 @@
+Rails.application.routes.draw do
+  get '/login' => 'users#login'
+  post '/login' => 'users#save'
+  get '/tokens/out' => 'tokens#out', :as => 'tokens_out'
+  get '/tokens/in' => 'tokens#in', :as => 'tokens_in'
+  get '/reset' => 'tokens#reset'
+  get '/tokens' => 'tokens#index', :as => 'tokens'
+  post '/tokens' => 'tokens#create'
+  get '/tokens/new' => 'tokens#new', :as => 'new_token'
+  get '/tokens/save' => 'tokens#save', :as => 'save_token'
+  get '/tokens/:id/edit' => 'tokens#edit', :as => 'edit_tokens'
+  get '/tokens/:id' => 'tokens#show', :as => 'token'
+  patch '/tokens/:id' => 'tokens#update'
+  put '/tokens/:id' => 'tokens#update'
+end

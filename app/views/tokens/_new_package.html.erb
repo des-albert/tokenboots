@@ -1,0 +1,8 @@
+<div class='nested-fields'>
+  <%= f.inputs do %>
+  <%= f.input :subject, :label => "Token Subject", :collection => SUBJECTS %>
+  <%= f.input :request, :as => :text, :input_html => {:class => "auto grow", :rows => 5, :cols => 80}%>
+  <%= f.input :response, :required => false,
+              :as => :text, :input_html => {:class => "auto grow", :rows => 5, :cols => 80} %>
+    <% end %>
+</div>

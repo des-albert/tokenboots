@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Incoming Tokens for <%= @user %></h3>
+
+<table class=table table-striped>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Creator</th>
+      <th>Subject</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tokens.each do |token| %>
+      <tr>
+        <td><%= token.state.name %></td>
+        <td><%= token.creator %></td>
+        <td><%= token.package.subject %></td>
+        <td><%= link_to 'Show', token %></td>
+        <td><%= link_to 'Edit', edit_tokens_path(token)  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

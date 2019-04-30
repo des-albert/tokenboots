@@ -1,0 +1,35 @@
+<%= semantic_form_for @token do |f| %>
+
+  <%= f.semantic_fields_for :package do |package| %>
+    <%= render 'edit_package', :f => package %>
+  <% end %>
+  <% if @token.creator != @user %>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-info btn-sm">
+      <input id="token_state_id_3"  type="radio" value="3" name="token[state_id]">accept
+    </label>
+    <label class="btn btn-warning btn-sm">
+      <input id="token_state_id_4"  type="radio" value="4" name="token[state_id]">reject
+    </label>
+    <label class="btn btn-success btn-sm">
+      <input id="token_state_id_5"  type="radio" value="5" name="token[state_id]">complete
+    </label>
+    </div>
+  <% else %>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-success btn-sm">
+        <input id="token_state_id_2"  type="radio" value="2" name="token[state_id]">send
+      </label>
+      <label class="btn btn-warning btn-sm">
+        <input id="token_state_id_6"  type="radio" value="6" name="token[state_id]">cancel
+      </label>
+      <label class="btn btn-info btn-sm">
+        <input id="token_state_id_7"  type="radio" value="7" name="token[state_id]">archive
+      </label>
+    </div>
+  <% end %>
+  <br><br>
+  <%= f.actions do %>
+    <%= f.action :submit, :button_html => {:class => "btn btn-primary btn-lg" }, :label => 'Update'  %>
+  <% end %>
+<% end %>
